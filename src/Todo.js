@@ -1,4 +1,5 @@
 import {
+  FormControl,
   Button,
   Modal,
   List,
@@ -46,7 +47,7 @@ function Todo(props) {
 
   return (
     <>
-    <Modal open={open} onClose={e => setOpen(false)}><div className={classes.paper}><h1>This is a modal</h1><input value={input} placeholder={props.todo.todo} onChange={event=> setInput(event.target.value)} /><Button onClick={updateTodo}>Update</Button></div></Modal>
+    <Modal open={open} onClose={e => setOpen(false)}><form><FormControl><div className={classes.paper}><h1>This is a modal</h1><input value={input} placeholder={props.todo.todo} onChange={event=> setInput(event.target.value)} /><Button type="submit" onClick={updateTodo}>Update</Button></div></FormControl></form></Modal>
     <List className="todo__list">
       <ListItem>
         <ListItemAvatar />
